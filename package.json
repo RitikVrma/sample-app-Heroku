@@ -1,0 +1,16 @@
+{
+  "name": "sample-heroku-deploy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^5.21.11",
+    "sqlite3": "^4.2.0"
+  }
+}
