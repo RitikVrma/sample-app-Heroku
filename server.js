@@ -21,7 +21,7 @@ app.post('/tasks', async (req, res) => {
     res.send(await Tasks.create(req.body))
 })
 
-db.sync()
+db.sync({alter: true})
     .then(() => {
 
         app.listen(PORT, (req, res) => {
