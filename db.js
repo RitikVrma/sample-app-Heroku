@@ -1,9 +1,17 @@
 const Sequelize = require('sequelize')
 
-const db = new Sequelize({
-    dialect: 'sqlite',
-    storage: __dirname + '/test.db',
-})
+let db;
+
+if(process.env.DATABASE_URL) {
+    db = new Sequelize(process.env.DATABASE_URL)
+}
+else {
+    db = new Sequelize({
+        dialect: 'sqlite',
+        storage: __dirname + '/test.db'
+    })
+}
+
 
 const Tasks = db.define('task', {
     id: {
